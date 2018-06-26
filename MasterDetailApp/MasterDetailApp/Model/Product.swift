@@ -81,4 +81,32 @@ class Product: Object, Mappable {
         location <- map["location"]
     }
     
+    static func getProducts(response: @escaping ([Product]?, String?) -> Void) {
+        apiProvider.request(ServerAPI.getProducts()) { (serviceResponse) in
+            switch serviceResponse {
+            case let .success(moyaResponse):
+                switch moyaResponse.statusCode {
+                case 200:
+                    do {
+                        let products = Mapper<Product>().mapArray(JSONArray: try moyaResponse.mapJSON() as! [[String: Any]])
+                        response(products, nil)
+                    } catch let error {
+                        response(nil, error.localizedDescription)
+                    }
+                default:
+                    do {
+                        let error = try moyaResponse.mapString(atKeyPath: "error")
+                        response(nil, error)
+                    } catch let error {
+                        response(nil, error.localizedDescription)
+                    }
+                }
+                
+            case let .failure(moyaError):
+                response(nil, moyaError.errorDescription)
+            }
+        }
+    }
 }
+
+
