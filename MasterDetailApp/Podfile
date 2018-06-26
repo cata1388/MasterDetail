@@ -9,4 +9,5 @@ target 'MasterDetailApp' do
 	pod 'RealmSwift'
 	pod 'ObjectMapper'
 	pod 'ObjectMapper+Realm'
+	pod 'Moya'
 end

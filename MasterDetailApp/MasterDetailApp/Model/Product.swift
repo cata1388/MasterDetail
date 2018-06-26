@@ -8,10 +8,10 @@
 
 import Foundation
 import UIKit
+import Realm
 import RealmSwift
 import ObjectMapper
 import ObjectMapper_Realm
-
 
 struct Location: Mappable {
     var longitude: Double?
@@ -26,6 +26,7 @@ struct Location: Mappable {
     }
 }
 
+@objcMembers
 class Product: Object, Mappable {
     
     // MARK: Properties
@@ -34,12 +35,16 @@ class Product: Object, Mappable {
     dynamic var name: String = ""
     dynamic var imageURL: String = ""
     dynamic var price: Double = 0.0
-    dynamic var expirationDate: Date = Date()
+    dynamic var expirationDate: Date? = Date()
     dynamic var creationDate: Date = Date()
-    dynamic var location: Location? = Location(longitude: 0, latitude: 0)
+    dynamic var location: Location? = nil
     
     
     /// MARK: Initializers
+    
+    required convenience init?(map: Map) {
+        self.init()
+    }
     
     required init() {
         super.init()
