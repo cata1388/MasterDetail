@@ -6,5 +6,7 @@ target 'MasterDetailApp' do
   use_frameworks!
 
   # Pods for MasterDetailApp
-
+	pod 'RealmSwift'
+	pod 'ObjectMapper'
+	pod 'ObjectMapper+Realm'
 end

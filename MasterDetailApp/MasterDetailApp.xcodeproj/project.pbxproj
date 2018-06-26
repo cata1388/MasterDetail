@@ -10,6 +10,7 @@
 		B42D51B320E1BEDF0077D323 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42D51B220E1BEDF0077D323 /* AppDelegate.swift */; };
 		B42D51BA20E1BEE10077D323 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B42D51B920E1BEE10077D323 /* Assets.xcassets */; };
 		B42D51BD20E1BEE10077D323 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B42D51BB20E1BEE10077D323 /* LaunchScreen.storyboard */; };
+		B49B0F4020E1D3DA00C1303A /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49B0F3F20E1D3DA00C1303A /* Product.swift */; };
 		FFE9496D5672FE102308C674 /* Pods_MasterDetailApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4845076294EAD14A3CFEB87 /* Pods_MasterDetailApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,6 +22,7 @@
 		B42D51B920E1BEE10077D323 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B42D51BC20E1BEE10077D323 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B42D51BE20E1BEE10077D323 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B49B0F3F20E1D3DA00C1303A /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		F9BF8935D45741B677748FC2 /* Pods-MasterDetailApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterDetailApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MasterDetailApp/Pods-MasterDetailApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,12 +67,37 @@
 		B42D51B120E1BEDF0077D323 /* MasterDetailApp */ = {
 			isa = PBXGroup;
 			children = (
+				B49B0F3C20E1D38F00C1303A /* Model */,
+				B49B0F3D20E1D3AC00C1303A /* View */,
+				B49B0F3E20E1D3B400C1303A /* ViewModel */,
 				B42D51B220E1BEDF0077D323 /* AppDelegate.swift */,
 				B42D51B920E1BEE10077D323 /* Assets.xcassets */,
 				B42D51BB20E1BEE10077D323 /* LaunchScreen.storyboard */,
 				B42D51BE20E1BEE10077D323 /* Info.plist */,
 			);
 			path = MasterDetailApp;
+			sourceTree = "<group>";
+		};
+		B49B0F3C20E1D38F00C1303A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B49B0F3F20E1D3DA00C1303A /* Product.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B49B0F3D20E1D3AC00C1303A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B49B0F3E20E1D3B400C1303A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		D45EA3A6B119C0C934776D81 /* Pods */ = {
@@ -93,6 +120,7 @@
 				B42D51AB20E1BEDF0077D323 /* Sources */,
 				B42D51AC20E1BEDF0077D323 /* Frameworks */,
 				B42D51AD20E1BEDF0077D323 /* Resources */,
+				BE92AE6013765B124BA29F81 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +177,30 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		BE92AE6013765B124BA29F81 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MasterDetailApp/Pods-MasterDetailApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper+Realm/ObjectMapper_Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper_Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MasterDetailApp/Pods-MasterDetailApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FA3842C145D9E4DEEF04E507 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -175,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B42D51B320E1BEDF0077D323 /* AppDelegate.swift in Sources */,
+				B49B0F4020E1D3DA00C1303A /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,10 +367,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MasterDetailApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cata.MasterDetailApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -333,10 +383,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MasterDetailApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cata.MasterDetailApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
