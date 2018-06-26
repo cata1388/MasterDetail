@@ -35,7 +35,7 @@ class Product: Object, Mappable {
     dynamic var name: String = ""
     dynamic var imageURL: String = ""
     dynamic var price: Double = 0.0
-    dynamic var expirationDate: Date? = Date()
+    dynamic var expirationDate: Date? = nil
     dynamic var creationDate: Date = Date()
     dynamic var location: Location? = nil
     
