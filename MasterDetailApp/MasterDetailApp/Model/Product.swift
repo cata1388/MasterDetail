@@ -31,6 +31,7 @@ class Product: Object, Mappable {
     // MARK: Properties
     
     dynamic var productId: Int = 0
+    dynamic var name: String = ""
     dynamic var imageURL: String = ""
     dynamic var price: Double = 0.0
     dynamic var expirationDate: Date = Date()
@@ -59,6 +60,7 @@ class Product: Object, Mappable {
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
         
         productId <- map["productId"]
+        name <- map["productName"]
         imageURL <- map["imageURL"]
         price <- map["price"]
         if let expirationDateString = map["expirationDate"].currentValue as? String,
