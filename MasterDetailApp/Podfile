@@ -10,4 +10,6 @@ target 'MasterDetailApp' do
 	pod 'ObjectMapper'
 	pod 'ObjectMapper+Realm'
 	pod 'Moya'
+	pod 'RxSwift'
+	pod 'RxCocoa'
 end

@@ -11,7 +11,33 @@ import UIKit
 
 class ProductsViewController: UIViewController {
     
+    /// MARK: Properties
+    
+    @IBOutlet var productTableView: UITableView!
+    
+    var viewModel: ProductViewModel? = nil
+    
+    // MARK: Constants
+    
+    struct Constants {
+        static let viewControllerTitle = "Products"
+    }
+    
+    // MARK: Initializers
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = Constants.viewControllerTitle
+        self.productTableView.alwaysBounceVertical = false
+        
+        self.viewModel = ProductViewModel()
+        
+        bindTableView()
+    }
+    
+    // MARK:
+    func bindTableView() {
+        
     }
 }

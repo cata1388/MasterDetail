@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B40A95DD20E2DD5F003995C4 /* Products.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B40A95DC20E2DD5F003995C4 /* Products.storyboard */; };
 		B40A95E020E2DE82003995C4 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40A95DF20E2DE82003995C4 /* ProductsViewController.swift */; };
+		B40A95E220E2E901003995C4 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40A95E120E2E901003995C4 /* ProductCell.swift */; };
+		B40A95E420E2EF25003995C4 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40A95E320E2EF25003995C4 /* ProductViewModel.swift */; };
 		B42D51B320E1BEDF0077D323 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42D51B220E1BEDF0077D323 /* AppDelegate.swift */; };
 		B42D51BA20E1BEE10077D323 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B42D51B920E1BEE10077D323 /* Assets.xcassets */; };
 		B42D51BD20E1BEE10077D323 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B42D51BB20E1BEE10077D323 /* LaunchScreen.storyboard */; };
@@ -22,6 +24,8 @@
 		AD504660C179ADA80B0CC1D7 /* Pods-MasterDetailApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterDetailApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MasterDetailApp/Pods-MasterDetailApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B40A95DC20E2DD5F003995C4 /* Products.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Products.storyboard; sourceTree = "<group>"; };
 		B40A95DF20E2DE82003995C4 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		B40A95E120E2E901003995C4 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		B40A95E320E2EF25003995C4 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		B42D51AF20E1BEDF0077D323 /* MasterDetailApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterDetailApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B42D51B220E1BEDF0077D323 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B42D51B920E1BEE10077D323 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				B40A95DC20E2DD5F003995C4 /* Products.storyboard */,
+				B40A95E120E2E901003995C4 /* ProductCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -113,6 +118,7 @@
 		B49B0F3E20E1D3B400C1303A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				B40A95E320E2EF25003995C4 /* ProductViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -217,6 +223,8 @@
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -227,6 +235,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -260,6 +270,8 @@
 			files = (
 				B42D51B320E1BEDF0077D323 /* AppDelegate.swift in Sources */,
 				B4D0EF0220E2ADA400980199 /* Router.swift in Sources */,
+				B40A95E420E2EF25003995C4 /* ProductViewModel.swift in Sources */,
+				B40A95E220E2E901003995C4 /* ProductCell.swift in Sources */,
 				B40A95E020E2DE82003995C4 /* ProductsViewController.swift in Sources */,
 				B49B0F4020E1D3DA00C1303A /* Product.swift in Sources */,
 			);
@@ -401,10 +413,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MasterDetailApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cata.MasterDetailApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -420,10 +429,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MasterDetailApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cata.MasterDetailApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
