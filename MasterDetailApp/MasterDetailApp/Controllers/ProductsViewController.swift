@@ -32,12 +32,14 @@ class ProductsViewController: UIViewController {
         self.productTableView.alwaysBounceVertical = false
         
         self.viewModel = ProductViewModel()
-        
+        self.viewModel?.getProducts()
         bindTableView()
     }
     
     // MARK:
     func bindTableView() {
-        
+        self.viewModel?.products.asObservable().subscribe(onNext: { (productList) in
+            print(productList)
+        })
     }
 }

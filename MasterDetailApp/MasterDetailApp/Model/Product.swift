@@ -84,7 +84,7 @@ class Product: Object, Mappable {
     static func getProducts(response: @escaping ([Product]?, String?) -> Void) {
         apiProvider.request(ServerAPI.getProducts()) { (serviceResponse) in
             switch serviceResponse {
-            case let .success(moyaResponse):
+            case .success(let moyaResponse):
                 switch moyaResponse.statusCode {
                 case 200:
                     do {
@@ -102,7 +102,7 @@ class Product: Object, Mappable {
                     }
                 }
                 
-            case let .failure(moyaError):
+            case .failure(let moyaError):
                 response(nil, moyaError.errorDescription)
             }
         }

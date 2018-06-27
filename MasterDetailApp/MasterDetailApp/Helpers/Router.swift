@@ -14,10 +14,10 @@ import Moya
 
 struct ServiceURL {
     #if DEBUG
-    static let base = ""
+    static let base = "http://demo4316364.mockable.io"
     
     #else
-    static let base = ""
+    static let base = "http://demo4316364.mockable.io"
     
     #endif
 }
@@ -72,7 +72,7 @@ extension ServerAPI: TargetType {
     var task: Task {
         switch self {
         case .getProducts():
-            return .requestParameters(parameters: parameters!, encoding: parameterEncoding)
+            return  Task.requestParameters(parameters: parameters!, encoding: parameterEncoding)
         }
     }
     
@@ -80,7 +80,7 @@ extension ServerAPI: TargetType {
         switch self {
         case .getProducts():
             return """
-            [{productId: 45, name:  "Pencil", imageURL: "https://images.clipartlogo.com/files/images/47/470660/pencil-clip-art_f.jpg", price: 1.5, expirationDate: null, creationDate: "2018-04-17T15:23:11.000Z", location: {longitude: -75.559085, latitude: 6.23779}}]
+            [{"productId": 45, "name": "Pencil", "imageURL": "https://images.clipartlogo.com/files/images/47/470660/pencil-clip-art_f.jpg", "price": 1.5, "expirationDate": null, "creationDate": "2018-04-17T15:23:11.000Z", "location": { "longitude": -75.559085, "latitude": 6.23779}}]
             """.data(using: .utf8)!
         }
     }
