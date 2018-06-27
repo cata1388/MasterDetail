@@ -15,4 +15,13 @@ class ProductCell: UITableViewCell {
     
     @IBOutlet var productImage: UIImageView!
     @IBOutlet var productName: UILabel!
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
 }

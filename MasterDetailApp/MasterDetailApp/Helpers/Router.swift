@@ -77,5 +77,4 @@ extension ServerAPI: TargetType {
             """.data(using: .utf8)!
         }
     }
-    
 }
