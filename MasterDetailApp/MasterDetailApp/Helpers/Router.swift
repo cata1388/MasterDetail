@@ -37,11 +37,15 @@ var apiProvider = MoyaProvider<ServerAPI>()
 extension ServerAPI: TargetType {
     
     var headers: [String: String]? {
-        return ["Content-Type": "application/json"]
+        return nil
     }
     
     var baseURL: URL {
         return URL(string: ServiceURL.base)!
+    }
+    
+    var validationType: ValidationType {
+        return .none
     }
     
     var path: String {
@@ -58,21 +62,10 @@ extension ServerAPI: TargetType {
         }
     }
     
-    var parameters: [String: Any]? {
-        switch self {
-        case .getProducts():
-            return [:]
-        }
-    }
-    
-    var parameterEncoding: ParameterEncoding {
-        return JSONEncoding.default
-    }
-    
     var task: Task {
         switch self {
         case .getProducts():
-            return  Task.requestParameters(parameters: parameters!, encoding: parameterEncoding)
+            return  .requestPlain
         }
     }
     
