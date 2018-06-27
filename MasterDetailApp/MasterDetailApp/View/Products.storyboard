@@ -22,23 +22,23 @@
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="lbE-QB-VEk">
                                 <rect key="frame" x="40" y="347" width="295" height="300"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f20-Jw-Zob">
-                                        <rect key="frame" x="0.0" y="0.0" width="42" height="55"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f20-Jw-Zob">
+                                        <rect key="frame" x="0.0" y="0.0" width="295" height="55.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <color key="textColor" red="0.23921568630000001" green="0.2901960784" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="96" translatesAutoresizingMaskIntoConstraints="NO" id="zAL-R3-8IT">
-                                        <rect key="frame" x="0.0" y="55" width="181.5" height="55"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="181.5" height="53"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLs-so-fBY">
-                                                <rect key="frame" x="0.0" y="0.0" width="43.5" height="55"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="43.5" height="53"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.23921568630000001" green="0.2901960784" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DB7-mF-g71">
-                                                <rect key="frame" x="139.5" y="0.0" width="42" height="55"/>
+                                                <rect key="frame" x="139.5" y="0.0" width="42" height="53"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.23921568630000001" green="0.2901960784" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -46,16 +46,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="juJ-9V-2mB">
-                                        <rect key="frame" x="0.0" y="110" width="186" height="54.5"/>
+                                        <rect key="frame" x="0.0" y="108.5" width="186" height="53"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expiration date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1E-Bp-AIk">
-                                                <rect key="frame" x="0.0" y="17" width="119" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="16.5" width="119" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.23921568630000001" green="0.2901960784" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNr-Cn-eK5">
-                                                <rect key="frame" x="144" y="17" width="42" height="20.5"/>
+                                                <rect key="frame" x="144" y="16.5" width="42" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.23921568630000001" green="0.2901960784" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -63,16 +63,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="8Wm-vo-0Vy">
-                                        <rect key="frame" x="0.0" y="164.5" width="187" height="55"/>
+                                        <rect key="frame" x="0.0" y="161.5" width="187" height="53"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creation date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6g0-os-Hos">
-                                                <rect key="frame" x="0.0" y="0.0" width="108" height="55"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="108" height="53"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.23921568630000001" green="0.2901960784" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJD-gA-3WU">
-                                                <rect key="frame" x="145" y="0.0" width="42" height="55"/>
+                                                <rect key="frame" x="145" y="0.0" width="42" height="53"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.23921568630000001" green="0.2901960784" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -80,13 +80,20 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouH-wi-o9G">
-                                        <rect key="frame" x="0.0" y="219.5" width="46" height="80.5"/>
-                                        <state key="normal" title="Button"/>
+                                        <rect key="frame" x="0.0" y="214.5" width="295" height="85.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Where to find it?">
+                                            <color key="titleColor" red="0.43529411759999997" green="0.72100840331428573" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="productLocationTouchUpInside:" destination="cZ4-Hv-QVQ" eventType="touchUpInside" id="vrz-R8-ZqA"/>
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="f20-Jw-Zob" firstAttribute="centerX" secondItem="lbE-QB-VEk" secondAttribute="centerX" id="0CC-fo-Xnd"/>
+                                    <constraint firstItem="ouH-wi-o9G" firstAttribute="centerX" secondItem="lbE-QB-VEk" secondAttribute="centerX" id="EI7-94-Mhh"/>
+                                </constraints>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KQB-Ph-SEf">
                                 <rect key="frame" x="40" y="104" width="295" height="235"/>

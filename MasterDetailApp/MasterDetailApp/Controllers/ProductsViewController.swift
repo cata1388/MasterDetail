@@ -116,7 +116,7 @@ class ProductsViewController: UIViewController {
             if product.expirationDate != nil {
                 detailViewController.expirationDate = dateFormatter.string(from: (product.expirationDate!))
             } else {
-                detailViewController.expirationDate = ""
+                detailViewController.expirationDate = nil
             }
         default:
             break

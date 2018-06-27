@@ -24,7 +24,7 @@ class ProductDetailViewController: UIViewController {
     var image: UIImage = UIImage()
     var name: String = ""
     var price: String = ""
-    var expirationDate: String = ""
+    var expirationDate: String? = nil
     var creationDate: String = ""
     
     struct Constants {
@@ -44,7 +44,7 @@ class ProductDetailViewController: UIViewController {
         productExpirationDateLabel.text = expirationDate
         productCreationDateLabel.text = creationDate
         
-        if expirationDate == "" {
+        if expirationDate == nil {
             expirationDateStackView.isHidden = true
         }
     }

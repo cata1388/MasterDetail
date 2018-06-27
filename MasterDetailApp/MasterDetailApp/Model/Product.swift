@@ -62,7 +62,7 @@ class Product: Object, Mappable {
     
     func mapping(map: Map) {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        formatter.dateFormat = "yyyy-MM-dd"
         
         productId <- map["productId"]
         name <- map["productName"]
