@@ -14,10 +14,10 @@ import Moya
 
 struct ServiceURL {
     #if DEBUG
-    static let base = "http://demo4316364.mockable.io"
+    static let base = "http://demo2612440.mockable.io"
     
     #else
-    static let base = "http://demo4316364.mockable.io"
+    static let base = "http://demo2612440.mockable.io"
     
     #endif
 }

@@ -24,6 +24,7 @@ class ProductsViewController: UIViewController {
     struct Constants {
         static let viewControllerTitle = "Products"
         static let cellIdentifier = "productCellIdentifier"
+        static let productDetailSegueIdentifier = "productDetailSegue"
     }
     
     // MARK: Initializers
@@ -81,6 +82,8 @@ class ProductsViewController: UIViewController {
         }
     }
     
+    // MARK: selected cell
+    
     func onSelectedCell() {
         self.productTableView.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
             
@@ -89,5 +92,34 @@ class ProductsViewController: UIViewController {
             }
             self?.productTableView.deselectRow(at: indexPath, animated: true)
         }).disposed(by: disposeBag)
+    }
+    
+    // MARK: Navigation management
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+        
+        switch segue.identifier {
+        case Constants.productDetailSegueIdentifier:
+            guard let detailViewController = segue.destination as? ProductDetailViewController else { return}
+            guard let indexPath = self.productTableView.indexPathForSelectedRow else { return }
+            guard let product = self.viewModel?.products.value[indexPath.row] else { return }
+            
+            let image = self.getImageFromString(stringImage: (product.imageURL))
+            
+            detailViewController.image = image
+            detailViewController.name = product.name
+            detailViewController.price = String(describing: "$ \(product.price)")
+            detailViewController.creationDate = dateFormatter.string(from: product.creationDate)
+            
+            if product.expirationDate != nil {
+                detailViewController.expirationDate = dateFormatter.string(from: (product.expirationDate!))
+            } else {
+                detailViewController.expirationDate = ""
+            }
+        default:
+            break
+        }
     }
 }
