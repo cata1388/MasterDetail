@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SDWebImage
 
 class ProductDetailViewController: UIViewController {
     
@@ -21,7 +22,7 @@ class ProductDetailViewController: UIViewController {
     @IBOutlet var expirationDateStackView: UIStackView!
     var productLocation: Location? = nil
     
-    var image: UIImage = UIImage()
+    var image: String = ""
     var name: String = ""
     var price: String = ""
     var expirationDate: String? = nil
@@ -39,7 +40,7 @@ class ProductDetailViewController: UIViewController {
         
         self.title = Constants.viewControllerTitle
         
-        productImage.image = image
+        productImage.sd_setImage(with: URL(string: image), placeholderImage: UIImage())
         productNameLabel.text = name
         productPriceLabel.text = price
         productExpirationDateLabel.text = expirationDate

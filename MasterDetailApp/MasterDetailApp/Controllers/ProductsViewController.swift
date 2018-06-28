@@ -106,9 +106,7 @@ class ProductsViewController: UIViewController {
             guard let indexPath = self.productTableView.indexPathForSelectedRow else { return }
             guard let product = self.viewModel?.products.value[indexPath.row] else { return }
             
-            let image = self.getImageFromString(stringImage: (product.imageURL))
-            
-            detailViewController.image = image
+            detailViewController.image = product.imageURL
             detailViewController.name = product.name
             detailViewController.price = String(describing: "$ \(product.price)")
             detailViewController.creationDate = dateFormatter.string(from: product.creationDate)

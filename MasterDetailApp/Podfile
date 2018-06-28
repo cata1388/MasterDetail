@@ -12,4 +12,5 @@ target 'MasterDetailApp' do
 	pod 'Moya'
 	pod 'RxSwift'
 	pod 'RxCocoa'
+	pod 'SDWebImage/WebP'
 end

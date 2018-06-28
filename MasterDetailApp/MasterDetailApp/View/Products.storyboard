@@ -96,7 +96,7 @@
                                     <constraint firstItem="ouH-wi-o9G" firstAttribute="height" secondItem="8Wm-vo-0Vy" secondAttribute="height" id="EKR-N7-LEt"/>
                                 </constraints>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KQB-Ph-SEf">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UIImage()" translatesAutoresizingMaskIntoConstraints="NO" id="KQB-Ph-SEf">
                                 <rect key="frame" x="40" y="104" width="295" height="235"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="KQB-Ph-SEf" secondAttribute="height" multiplier="59:47" id="BDh-QB-kSY"/>
@@ -198,7 +198,7 @@
                                                     <color key="textColor" red="0.23921568630000001" green="0.2901960784" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oEe-TH-GFe">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UIImage()" translatesAutoresizingMaskIntoConstraints="NO" id="oEe-TH-GFe">
                                                     <rect key="frame" x="16" y="11" width="51" height="43"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="43" id="SVT-8a-uuq"/>
@@ -244,4 +244,7 @@
             <point key="canvasLocation" x="749.60000000000002" y="106.59670164917542"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="UIImage()" width="16" height="16"/>
+    </resources>
 </document>
