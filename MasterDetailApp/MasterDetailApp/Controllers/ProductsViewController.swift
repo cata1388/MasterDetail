@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import RxSwift
+import SVProgressHUD
 
 class ProductsViewController: UIViewController {
     
@@ -45,19 +46,19 @@ class ProductsViewController: UIViewController {
     
     func bindTableView() {
         self.productTableView.tableFooterView = UIView()
+        SVProgressHUD.show()
         
         // MARK: error observable
         
         self.viewModel?.error.asObservable().subscribe(onNext: { (errorMessage) in
-            print(errorMessage)
-            // TO DO
-            // handle error
+            guard let error = errorMessage else { return }
+            SVProgressHUD.showError(withStatus: error)
         }).disposed(by: disposeBag)
         
         // MARK: products observable
         
         self.viewModel?.products.asObservable().bind(to: self.productTableView.rx.items(cellIdentifier: Constants.cellIdentifier, cellType: ProductCell.self)) { row, product, cell in
-
+            SVProgressHUD.dismiss()
             self.setupCell(cell: cell, with: product)
         }.disposed(by: disposeBag)
     }

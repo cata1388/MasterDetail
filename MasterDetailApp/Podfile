@@ -13,4 +13,5 @@ target 'MasterDetailApp' do
 	pod 'RxSwift'
 	pod 'RxCocoa'
 	pod 'SDWebImage/WebP'
+	pod 'SVProgressHUD'
 end

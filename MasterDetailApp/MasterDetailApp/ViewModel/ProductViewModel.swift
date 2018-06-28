@@ -18,14 +18,13 @@ class ProductViewModel: NSObject {
     // MARK: Properties
     
     var products = Variable<[Product]>([])
-    var error = Variable<String>("")
+    var error = Variable<String?>(nil)
     var disposeBag = DisposeBag()
     
     // MARK: function to get the products
     
     func getProducts() {
         Product.getProducts { (productsResponse, errorMessage) in
-            
             guard let productList = productsResponse else {
                 if let error = errorMessage {
                     Observable.just(error).bind(to: self.error).disposed(by: self.disposeBag)
