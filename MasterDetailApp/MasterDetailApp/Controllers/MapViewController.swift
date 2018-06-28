@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import MapKit
+import SVProgressHUD
 
 class MapViewController: UIViewController {
     
@@ -53,6 +54,6 @@ extension MapViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error)
+        SVProgressHUD.showError(withStatus: error.localizedDescription)
     }
 }

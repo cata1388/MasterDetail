@@ -42,6 +42,18 @@ class Product: Object, Mappable {
     
     /// MARK: Initializers
     
+    convenience init(productId: Int, name: String, imageURL: String, price: Double, expirationDate: Date?, creationDate: Date, location: Location?) {
+        self.init()
+        
+        self.productId = productId
+        self.name = name
+        self.imageURL = imageURL
+        self.price = price
+        self.expirationDate = expirationDate
+        self.creationDate = creationDate
+        self.location = location
+    }
+    
     required convenience init?(map: Map) {
         self.init()
     }
