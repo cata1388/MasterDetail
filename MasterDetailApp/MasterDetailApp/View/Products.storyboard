@@ -63,36 +63,37 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="8Wm-vo-0Vy">
-                                        <rect key="frame" x="0.0" y="161.5" width="187" height="53"/>
+                                        <rect key="frame" x="0.0" y="161.5" width="187" height="69.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creation date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6g0-os-Hos">
-                                                <rect key="frame" x="0.0" y="0.0" width="108" height="53"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="108" height="69.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.23921568630000001" green="0.2901960784" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJD-gA-3WU">
-                                                <rect key="frame" x="145" y="0.0" width="42" height="53"/>
+                                                <rect key="frame" x="145" y="0.0" width="42" height="69.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.23921568630000001" green="0.2901960784" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouH-wi-o9G">
-                                        <rect key="frame" x="0.0" y="214.5" width="295" height="85.5"/>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouH-wi-o9G">
+                                        <rect key="frame" x="0.0" y="231" width="295" height="69"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Where to find it?">
-                                            <color key="titleColor" red="0.43529411759999997" green="0.72100840331428573" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="1" green="0.63408839610000001" blue="0.53621118940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
-                                            <action selector="productLocationTouchUpInside:" destination="cZ4-Hv-QVQ" eventType="touchUpInside" id="vrz-R8-ZqA"/>
+                                            <segue destination="Ja0-y4-b7Z" kind="show" identifier="mapViewSegueIdentifier" id="3td-nt-2Kg"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="f20-Jw-Zob" firstAttribute="centerX" secondItem="lbE-QB-VEk" secondAttribute="centerX" id="0CC-fo-Xnd"/>
                                     <constraint firstItem="ouH-wi-o9G" firstAttribute="centerX" secondItem="lbE-QB-VEk" secondAttribute="centerX" id="EI7-94-Mhh"/>
+                                    <constraint firstItem="ouH-wi-o9G" firstAttribute="height" secondItem="8Wm-vo-0Vy" secondAttribute="height" id="EKR-N7-LEt"/>
                                 </constraints>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KQB-Ph-SEf">
@@ -126,6 +127,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mOF-BV-WXe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1508" y="106.59670164917542"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="jWZ-P3-M0a">
+            <objects>
+                <viewController id="Ja0-y4-b7Z" customClass="MapViewController" customModule="MasterDetailApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qmx-T4-OAj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9jh-7d-leR">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CV5-KW-z0t" firstAttribute="bottom" secondItem="9jh-7d-leR" secondAttribute="bottom" id="1Px-IK-61o"/>
+                            <constraint firstItem="CV5-KW-z0t" firstAttribute="trailing" secondItem="9jh-7d-leR" secondAttribute="trailing" id="Ijs-oJ-czS"/>
+                            <constraint firstItem="9jh-7d-leR" firstAttribute="leading" secondItem="CV5-KW-z0t" secondAttribute="leading" id="V18-Sn-mKH"/>
+                            <constraint firstItem="9jh-7d-leR" firstAttribute="top" secondItem="CV5-KW-z0t" secondAttribute="top" id="j6i-4L-55a"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="CV5-KW-z0t"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="9jh-7d-leR" id="lQf-Ee-frT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O8X-7f-eyj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2228" y="107"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ABP-nI-fEg">

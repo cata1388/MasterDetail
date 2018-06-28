@@ -29,6 +29,7 @@ class ProductDetailViewController: UIViewController {
     
     struct Constants {
         static let viewControllerTitle = "Product Detail"
+        static let mapViewSegueIdentifier = "mapViewSegueIdentifier"
     }
     
     // MARK: Initializers
@@ -49,11 +50,17 @@ class ProductDetailViewController: UIViewController {
         }
     }
     
-    // MARK: Actions
+    // MARK: Navigation management
     
-    @IBAction func productLocationTouchUpInside(_ sender: Any) {
-        //TO DO
-        // show product location
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        switch segue.identifier {
+        case Constants.mapViewSegueIdentifier:
+            guard let mapViewController = segue.destination as? MapViewController else { return }
+            
+            mapViewController.productLocation = productLocation
+        default:
+            break
+        }
     }
-    
 }

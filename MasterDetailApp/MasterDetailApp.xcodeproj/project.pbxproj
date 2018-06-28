@@ -15,6 +15,7 @@
 		B42D51BA20E1BEE10077D323 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B42D51B920E1BEE10077D323 /* Assets.xcassets */; };
 		B42D51BD20E1BEE10077D323 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B42D51BB20E1BEE10077D323 /* LaunchScreen.storyboard */; };
 		B4374C5D20E405BC00875634 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4374C5C20E405BC00875634 /* ProductDetailViewController.swift */; };
+		B4374C5F20E458D900875634 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4374C5E20E458D900875634 /* MapViewController.swift */; };
 		B49B0F4020E1D3DA00C1303A /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49B0F3F20E1D3DA00C1303A /* Product.swift */; };
 		B4D0EF0220E2ADA400980199 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D0EF0120E2ADA400980199 /* Router.swift */; };
 		FFE9496D5672FE102308C674 /* Pods_MasterDetailApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4845076294EAD14A3CFEB87 /* Pods_MasterDetailApp.framework */; };
@@ -33,6 +34,7 @@
 		B42D51BC20E1BEE10077D323 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B42D51BE20E1BEE10077D323 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4374C5C20E405BC00875634 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		B4374C5E20E458D900875634 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B49B0F3F20E1D3DA00C1303A /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		B4D0EF0120E2ADA400980199 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		F9BF8935D45741B677748FC2 /* Pods-MasterDetailApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterDetailApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MasterDetailApp/Pods-MasterDetailApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			children = (
 				B40A95DF20E2DE82003995C4 /* ProductsViewController.swift */,
 				B4374C5C20E405BC00875634 /* ProductDetailViewController.swift */,
+				B4374C5E20E458D900875634 /* MapViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				B40A95E220E2E901003995C4 /* ProductCell.swift in Sources */,
 				B40A95E020E2DE82003995C4 /* ProductsViewController.swift in Sources */,
 				B49B0F4020E1D3DA00C1303A /* Product.swift in Sources */,
+				B4374C5F20E458D900875634 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -112,6 +112,7 @@ class ProductsViewController: UIViewController {
             detailViewController.name = product.name
             detailViewController.price = String(describing: "$ \(product.price)")
             detailViewController.creationDate = dateFormatter.string(from: product.creationDate)
+            detailViewController.productLocation = product.location
             
             if product.expirationDate != nil {
                 detailViewController.expirationDate = dateFormatter.string(from: (product.expirationDate!))
