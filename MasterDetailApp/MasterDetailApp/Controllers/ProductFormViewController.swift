@@ -20,8 +20,11 @@ class ProductFormViewController: UIViewController {
     @IBOutlet var latitudeTextfield: UITextField!
     @IBOutlet var longitudeTextfield: UITextField!
     
+    var datePicker = UIDatePicker()
+    
     struct Constants {
         static let doneButtonTitle = "Done"
+        static let cancelButtonTitle = "Cancel"
     }
     
     // MARK: Initializers
@@ -41,7 +44,61 @@ class ProductFormViewController: UIViewController {
         
     }
     
+    func showDatePicker() {
+        datePicker.datePickerMode = .date
+        
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem.init(title: Constants.doneButtonTitle, style: .done, target: self, action: #selector(datePickerDone))
+        let space = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem.init(title: Constants.cancelButtonTitle, style: .done, target: self, action: #selector(datePickerCancel))
+        toolbar.setItems([doneButton, space, cancelButton], animated: false)
+        
+        if self.expirationDateTextfield.isEditing {
+            self.expirationDateTextfield.inputAccessoryView = toolbar
+            self.creationDateTextfield.inputAccessoryView = toolbar
+        }
+        
+        if self.creationDateTextfield.isEditing {
+            self.creationDateTextfield.inputView = datePicker
+            self.expirationDateTextfield.inputView = datePicker
+        }
+    }
+    
+    // MARK: Actions
+    
     func doneButtonTouchUpInside() {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    func datePickerDone() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yyyy"
+        
+        if self.expirationDateTextfield.isEditing {
+            self.expirationDateTextfield.text = formatter.string(from: self.datePicker.date)
+        }
+        
+        if self.creationDateTextfield.isEditing {
+            self.creationDateTextfield.text = formatter.string(from: datePicker.date)
+        }
+        datePickerCancel()
+    }
+    
+    func datePickerCancel() {
+        self.view.endEditing(true)
+    }
+    
+    @IBAction func expirationDateStartEditing(_ sender: Any) {
+        showDatePicker()
+    }
+    
+    @IBAction func creationDateStartEditing(_ sender: Any) {
+        showDatePicker()
+    }
+    
+    
+    
+    
 }

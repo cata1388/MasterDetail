@@ -71,6 +71,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="expirationDateStartEditing:" destination="hvx-UC-g5e" eventType="editingDidBegin" id="nP6-SY-9qw"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -88,6 +91,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="creationDateStartEditing:" destination="hvx-UC-g5e" eventType="editingDidBegin" id="1dr-is-4zB"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
