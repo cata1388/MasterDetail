@@ -9,18 +9,24 @@
 import Foundation
 import UIKit
 
+protocol ProductManagementProtocol {
+    func addProduct(name: String, imageURL: String, price: Double, expirationDate: Date?, creationDate: Date, location: Location?)
+}
+
 class ProductFormViewController: UIViewController {
     
     // MARK: Properties
     
     @IBOutlet var nameTextfield: UITextField!
     @IBOutlet var imageURLTextfield: UITextField!
+    @IBOutlet var priceTextfield: UITextField!
     @IBOutlet var expirationDateTextfield: UITextField!
     @IBOutlet var creationDateTextfield: UITextField!
     @IBOutlet var latitudeTextfield: UITextField!
     @IBOutlet var longitudeTextfield: UITextField!
     
     var datePicker = UIDatePicker()
+    var delegate: ProductManagementProtocol? = nil
     
     struct Constants {
         static let doneButtonTitle = "Done"
@@ -41,7 +47,6 @@ class ProductFormViewController: UIViewController {
         let doneButton = UIBarButtonItem.init(title: Constants.doneButtonTitle, style: UIBarButtonItemStyle.done, target: self, action: #selector(doneButtonTouchUpInside))
         doneButton.tintColor = UIColor.black
         self.navigationItem.rightBarButtonItem = doneButton
-        
     }
     
     func showDatePicker() {
@@ -57,18 +62,30 @@ class ProductFormViewController: UIViewController {
         
         if self.expirationDateTextfield.isEditing {
             self.expirationDateTextfield.inputAccessoryView = toolbar
-            self.creationDateTextfield.inputAccessoryView = toolbar
+            self.expirationDateTextfield.inputView = datePicker
         }
         
         if self.creationDateTextfield.isEditing {
+            self.creationDateTextfield.inputAccessoryView = toolbar
             self.creationDateTextfield.inputView = datePicker
-            self.expirationDateTextfield.inputView = datePicker
+            
         }
     }
     
     // MARK: Actions
     
     func doneButtonTouchUpInside() {
+        
+        let name = self.nameTextfield.text ?? ""
+        let image = self.imageURLTextfield.text ?? ""
+        let price = NumberFormatter().number(from: self.priceTextfield.text!)?.doubleValue ?? 0.0
+        let expirationDate = DateFormatter().date(from: self.expirationDateTextfield.text!) ?? nil
+        let creationDate = DateFormatter().date(from: self.creationDateTextfield.text!) ?? Date()
+        let latitud = NumberFormatter().number(from: self.latitudeTextfield.text!)?.doubleValue ?? nil
+        let longitude = NumberFormatter().number(from: self.longitudeTextfield.text!)?.doubleValue ?? nil
+        let location = Location(longitude: longitude ?? 0.0, latitude: latitud ?? 0.0)
+        
+        self.delegate?.addProduct(name: name, imageURL: image, price: price, expirationDate: expirationDate, creationDate: creationDate, location: location)
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -97,8 +114,4 @@ class ProductFormViewController: UIViewController {
     @IBAction func creationDateStartEditing(_ sender: Any) {
         showDatePicker()
     }
-    
-    
-    
-    
 }

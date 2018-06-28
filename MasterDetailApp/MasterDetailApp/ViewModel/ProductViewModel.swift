@@ -21,7 +21,7 @@ class ProductViewModel: NSObject {
     var error = Variable<String?>(nil)
     var disposeBag = DisposeBag()
     
-    // MARK: function to get the products
+    // MARK: Get products
     
     func getProducts() {
         Product.getProducts { (productsResponse, errorMessage) in
@@ -34,5 +34,13 @@ class ProductViewModel: NSObject {
             
             Observable.just(productList).bind(to: self.products).disposed(by: self.disposeBag)
         }
+    }
+    
+    // MARK: Add product
+    
+    func addProduct(name: String, imageURL: String, price: Double, expirationDate: Date?, creationDate: Date, location: Location?) {
+        let product = Product(name: name, imageURL: imageURL, price: price, expirationDate: expirationDate, creationDate: creationDate, location: location)
+        
+        products.value.append(product)
     }
 }

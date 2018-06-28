@@ -20,6 +20,11 @@ struct Location: Mappable {
     init(map: Map) {
     }
     
+    init(longitude: Double, latitude: Double) {
+        self.longitude = longitude
+        self.latitude = latitude
+    }
+    
     mutating func mapping(map: Map) {
         longitude <- map["longitude"]
         latitude <- map["latitude"]
@@ -31,7 +36,6 @@ class Product: Object, Mappable {
     
     // MARK: Properties
     
-    dynamic var productId: Int = 0
     dynamic var name: String = ""
     dynamic var imageURL: String = ""
     dynamic var price: Double = 0.0
@@ -42,10 +46,9 @@ class Product: Object, Mappable {
     
     /// MARK: Initializers
     
-    convenience init(productId: Int, name: String, imageURL: String, price: Double, expirationDate: Date?, creationDate: Date, location: Location?) {
+    convenience init(name: String, imageURL: String, price: Double, expirationDate: Date?, creationDate: Date, location: Location?) {
         self.init()
         
-        self.productId = productId
         self.name = name
         self.imageURL = imageURL
         self.price = price
@@ -76,7 +79,6 @@ class Product: Object, Mappable {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         
-        productId <- map["productId"]
         name <- map["productName"]
         imageURL <- map["imageURL"]
         price <- map["price"]

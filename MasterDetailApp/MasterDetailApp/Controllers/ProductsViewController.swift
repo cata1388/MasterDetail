@@ -11,7 +11,7 @@ import UIKit
 import RxSwift
 import SVProgressHUD
 
-class ProductsViewController: UIViewController {
+class ProductsViewController: UIViewController, ProductManagementProtocol {
     
     /// MARK: Properties
     
@@ -26,6 +26,7 @@ class ProductsViewController: UIViewController {
         static let viewControllerTitle = "Products"
         static let cellIdentifier = "productCellIdentifier"
         static let productDetailSegueIdentifier = "productDetailSegue"
+        static let productFormSegueIdentifier = "productFormSegueIdentifier"
     }
     
     // MARK: Initializers
@@ -74,10 +75,11 @@ class ProductsViewController: UIViewController {
     // MARK: fetch image
     
     func getImageFromString(stringImage: String) -> UIImage {
-        let imageURL = URL(string: stringImage)
+        
+        guard let imageURL = URL(string: stringImage) else { return UIImage() }
         do {
-            let imageData = try Data(contentsOf: imageURL!)
-            return UIImage(data: imageData)!
+            let imageData = try Data(contentsOf: imageURL)
+            return UIImage(data: imageData) ?? UIImage()
         } catch  {
             return UIImage()
         }
@@ -93,6 +95,12 @@ class ProductsViewController: UIViewController {
             }
             self?.productTableView.deselectRow(at: indexPath, animated: true)
         }).disposed(by: disposeBag)
+    }
+    
+    // MARK: Add product
+    
+    func addProduct(name: String, imageURL: String, price: Double, expirationDate: Date?, creationDate: Date, location: Location?) {
+        self.viewModel?.addProduct(name: name, imageURL: imageURL, price: price, expirationDate: expirationDate, creationDate: creationDate, location: location)
     }
     
     // MARK: Navigation management
@@ -118,6 +126,11 @@ class ProductsViewController: UIViewController {
             } else {
                 detailViewController.expirationDate = nil
             }
+            
+        case Constants.productFormSegueIdentifier:
+            guard let productFormViewController = segue.destination as? ProductFormViewController else { return }
+            
+            productFormViewController.delegate = self
         default:
             break
         }
