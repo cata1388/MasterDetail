@@ -31,6 +31,7 @@ class ProductDetailViewController: UIViewController {
     struct Constants {
         static let viewControllerTitle = "Product Detail"
         static let mapViewSegueIdentifier = "mapViewSegueIdentifier"
+        static let placeholderImage = "placeholder"
     }
     
     // MARK: Initializers
@@ -40,7 +41,7 @@ class ProductDetailViewController: UIViewController {
         
         self.title = Constants.viewControllerTitle
         
-        productImage.sd_setImage(with: URL(string: image), placeholderImage: UIImage())
+        productImage.sd_setImage(with: URL(string: image), placeholderImage: UIImage(named: Constants.placeholderImage))
         productNameLabel.text = name
         productPriceLabel.text = price
         productExpirationDateLabel.text = expirationDate

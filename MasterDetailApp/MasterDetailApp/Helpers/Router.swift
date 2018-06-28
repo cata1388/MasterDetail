@@ -14,10 +14,10 @@ import Moya
 
 struct ServiceURL {
     #if DEBUG
-    static let base = "http://www.mocky.io/v2/5b344fed3200001d0cd1e36c"
+    static let base = "http://www.mocky.io/v2/5b3512362f00001a043761bc"
     
     #else
-    static let base = "http://www.mocky.io/v2/5b344fed3200001d0cd1e36c"
+    static let base = "http://www.mocky.io/v2/5b3512362f00001a043761bc"
     
     #endif
 }
