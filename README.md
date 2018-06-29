@@ -8,7 +8,8 @@ The app needs a connection with a REST API in order to show the products, howeve
 
 ### Mock data
 
-* [Dropwizard](https://www.mocky.io) - here is a web page where you can mock your data
+* [Mock.io](https://www.mocky.io) - here is a web page where you can mock your data
+	
 	```status code: 200 OK```
 	```Content Type: application/json, UTF-8```
 
