@@ -50,7 +50,8 @@ The app needs a connection with a REST API in order to show the products, howeve
     }
 	]```
 
-	Once you click on ```Generate my HTTP Response``` it will generate a link that you need to add in the project.
+
+Once you click on ```Generate my HTTP Response``` it will generate a link that you need to add in the project.
 
 
 ### Prerequisites
